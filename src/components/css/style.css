@@ -1,0 +1,7 @@
+@tailwind base;
+.low-light-orange {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 40%, #ED8936 40%);
+    padding-right: 15px;
+  }
+@tailwind components;
+@tailwind utilities;

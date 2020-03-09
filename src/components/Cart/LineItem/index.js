@@ -28,7 +28,7 @@ const LineItem = props => {
   }
 
   return (
-    <div className="w-full md:w-1/4  p-6 flex flex-col hover:grow hover:shadow-lg">
+    <div className="w-full md:w-1/4  p-6 flex flex-col hover:grow hover:shadow-lg bg-white">
       {variantImage}
       <p className="text-blue-700 text-lg font-serif font-bold">
         {line_item.title}

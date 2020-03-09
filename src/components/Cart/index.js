@@ -18,7 +18,7 @@ const Cart = () => {
 
   return (
     <>
-      <div className="container mx-auto flex items-center flex-wrap py-4">
+      <div className="container mx-auto flex items-center flex-wrap py-4 bg-gray-100">
         {line_items}
       </div>
       <div className='pb-8'>

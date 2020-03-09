@@ -47,9 +47,10 @@ const ProductList = () => {
 
   return (
     <>
-      <section className="bg-white py-4">
-        <div className="container mx-auto flex items-center flex-wrap py-4">
-          <nav id="store" className="w-full z-30 top-0 px-6 py-1">
+    
+      <section className="py-4">
+        <div className="container mx-auto grid grid-cols-12 gap-4 py-4">
+          <nav id="store" className="w-full z-30 top-0 px-6 py-1 col-span-12">
             <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2">
               <p
                 className="uppercase tracking-wide no-underline hover:no-underline font-serif font-medium text-blue-600 text-6xl "
@@ -72,10 +73,10 @@ const ProductList = () => {
                 },
               }) => (
                 <div
-                  className="w-full md:w-1/4  p-6 flex flex-col hover:grow hover:shadow-lg"
+                  className="md:col-span-3 col-span-6 bg-white flex flex-col hover:shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105"
                   key={id}
                 >
-                  <Link to={`/product/${handle}/`}>
+                  <Link className='' to={`/product/${handle}/`}>
                     {firstImage && firstImage.localFile && (
                       <Img
                         className=""
@@ -84,7 +85,7 @@ const ProductList = () => {
                       />
                     )}
                     <div className="pt-3 flex items-center justify-between">
-                      <p className="text-blue-700 text-lg font-serif font-bold">
+                      <p className="text-blue-700 text-lg ">
                         {title}
                       </p>
                     </div>

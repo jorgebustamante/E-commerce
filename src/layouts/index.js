@@ -5,19 +5,17 @@ import Header from '../components/header'
 import ContextProvider from '~/provider/ContextProvider'
 
 import { GlobalStyle } from '~/utils/styles'
-// import Navigation from '~/components/Navigation'
 
 
 const Layout = ({ children }) => {
   return (
     <ContextProvider>
       <GlobalStyle />
-      <>
-        {/* <Navigation/>*/}
+      <div className='bg-gray-100'>
               <Header/>
               {children}
 
-            </>
+            </div>
     </ContextProvider>
   )
 }

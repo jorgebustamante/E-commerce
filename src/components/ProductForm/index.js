@@ -95,50 +95,58 @@ const ProductForm = ({ product }) => {
 
   return (
     <>
-      <h3 className='font-bold text-gray-800'>{price}</h3>
-      {options.map(({ id, name, values }, index) => (
-        <React.Fragment key={id}>
-          <label htmlFor={name} className='font-bold text-gray-800'>{name} </label>
-          <select
-            name={name}
-            key={id}
-            onChange={event => handleOptionChange(index, event)}
-          >
-            {values.map(value => (
-              <option
-                value={value}
-                key={`${name}-${value}`}
-                disabled={checkDisabled(name, value)}
-                className='font-bold text-gray-800'
-              >
-                {value}
-              </option>
-            ))}
-          </select>
-          <br />
-        </React.Fragment>
-      ))}
-      <label htmlFor="quantity" className='font-bold text-gray-800'>Quantity </label>
-      <input
-        type="number"
-        id="quantity"
-        name="quantity"
-        min="1"
-        step="1"
-        onChange={handleQuantityChange}
-        value={quantity}
-        className='w-12'
-      />
-      <br />
-      <button
-        type="submit"
-        disabled={!available || adding}
-        onClick={handleAddToCart}
-        className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
-      >
-        Add to Cart
-      </button>
-      {!available && <p>This Product is out of Stock!</p>}
+      <div className='grid grid-cols-1'>
+        <h3 className="font-bold text-gray-800">{price}</h3>
+        {options.map(({ id, name, values }, index) => (
+          <React.Fragment key={id}>
+            <div className='flex flex-row my-1'>
+            <label htmlFor={name} className="font-bold text-gray-800">
+              {name}{' '}
+            </label>
+            <select
+              name={name}
+              key={id}
+              onChange={event => handleOptionChange(index, event)}
+            >
+              {values.map(value => (
+                <option
+                  value={value}
+                  key={`${name}-${value}`}
+                  disabled={checkDisabled(name, value)}
+                  className="font-bold text-gray-800"
+                >
+                  {value}
+                </option>
+              ))}
+            </select>
+            </div>
+          </React.Fragment>
+        ))}
+        <div className='flex flex-row'>
+        <label htmlFor="quantity" className="font-bold text-gray-800">
+          Quantity{' '}
+        </label>
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          min="1"
+          step="1"
+          onChange={handleQuantityChange}
+          value={quantity}
+          className="w-12"
+        />
+        </div>
+        <button
+          type="submit"
+          disabled={!available || adding}
+          onClick={handleAddToCart}
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full m-2"
+        >
+          Add to Cart
+        </button>
+        {!available && <p>This Product is out of Stock!</p>}
+      </div>
     </>
   )
 }

@@ -1,7 +1,15 @@
 @tailwind base;
-.low-light-orange {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 40%, #ED8936 40%);
-    padding-right: 15px;
-  }
+.low-light-blue {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 40%, #4299E1 40%);
+  padding-right: 15px;
+}
+.spectral {
+  font-family: 'spectral';
+  /* font-style: italic; */
+  font-weight: 800;
+  /* -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white; */
+  /* font-size: 6rem; */
+}
 @tailwind components;
 @tailwind utilities;

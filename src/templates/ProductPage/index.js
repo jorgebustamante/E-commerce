@@ -4,13 +4,15 @@ import Img from 'gatsby-image'
 import '../../components/css/style.css';
 import SEO from '~/components/seo'
 import ProductForm from '~/components/ProductForm'
+import { useSpring, animated } from 'react-spring'
 
 const ProductPage = ({ data }) => {
   const product = data.shopifyProduct
+  const props = useSpring({ opacity: 1, from: { opacity: 0 } })
   return (
     <>
       <SEO title={product.title} description={product.description} />
-      <section className=''>
+      <animated.section className='' style={props}>
         <Link to='/' className=''>Back to catalog</Link>
         <div className='pb-8 mx-2 md:mx-16 grid grid-cols-12 gap-4'>
           <div className='col-span-12 md:col-span-8 flex flex-no-wrap md:flex-row overflow-x-scroll md:overflow-hidden py-4' id='left'>
@@ -36,7 +38,7 @@ const ProductPage = ({ data }) => {
             </div>
           </div>
         </div>
-      </section>
+      </animated.section>
     </>
   )
 }
@@ -83,7 +85,7 @@ export const query = graphql`
         localFile {
           childImageSharp {
             fluid(maxWidth: 910) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

@@ -6,16 +6,16 @@ import ContextProvider from '~/provider/ContextProvider'
 
 import { GlobalStyle } from '~/utils/styles'
 
-
 const Layout = ({ children }) => {
   return (
     <ContextProvider>
       <GlobalStyle />
-      <div className='bg-gray-100'>
-              <Header/>
-              {children}
 
-            </div>
+      <div className="bg-gray-100">
+        <Header />
+        {children}
+      </div>
+
     </ContextProvider>
   )
 }

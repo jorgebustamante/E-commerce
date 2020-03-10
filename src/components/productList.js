@@ -1,8 +1,11 @@
 import React, { useContext } from 'react'
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
+import AniLink from "gatsby-plugin-transition-link/AniLink";
+
 import Img from 'gatsby-image'
 import StoreContext from '~/context/StoreContext'
 import '../components/css/style.css'
+import { useSpring, animated } from 'react-spring'
 
 const ProductList = () => {
   const {
@@ -24,7 +27,7 @@ const ProductList = () => {
                 localFile {
                   childImageSharp {
                     fluid(maxWidth: 910) {
-                      ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                      ...GatsbyImageSharpFluid_withWebp
                     }
                   }
                 }
@@ -45,10 +48,11 @@ const ProductList = () => {
       style: 'currency',
     }).format(parseFloat(price ? price : 0))
 
+  const props = useSpring({ opacity: 1, from: { opacity: 0 } })
+
   return (
-    <>
-    
-      <section className="py-4">
+    <animated.div style={props}>
+      <section className="py-4 transition-all duration-1000 ease-in-out">
         <div className="container mx-auto grid grid-cols-12 gap-4 py-4">
           <nav id="store" className="w-full z-30 top-0 px-6 py-1 col-span-12">
             <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2">
@@ -76,7 +80,7 @@ const ProductList = () => {
                   className="md:col-span-3 col-span-6 bg-white flex flex-col hover:shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105"
                   key={id}
                 >
-                  <Link className='' to={`/product/${handle}/`}>
+                  <AniLink swipe direction="left" to={`/product/${handle}/`}>
                     {firstImage && firstImage.localFile && (
                       <Img
                         className=""
@@ -85,14 +89,12 @@ const ProductList = () => {
                       />
                     )}
                     <div className="pt-3 flex items-center justify-between">
-                      <p className="text-blue-700 text-lg ">
-                        {title}
-                      </p>
+                      <p className="text-blue-700 text-lg ">{title}</p>
                     </div>
                     <p className="pt-1 text-gray-700 text-lg font-bold">
                       {getPrice(firstVariant.price)}
                     </p>
-                  </Link>
+                  </AniLink>
                 </div>
               )
             )
@@ -101,7 +103,7 @@ const ProductList = () => {
           )}
         </div>
       </section>
-    </>
+    </animated.div>
   )
 }
 export default ProductList

@@ -12,8 +12,8 @@ const Hero = () => {
       >
         <div className="container mx-auto">
           <div className="flex flex-col w-full lg:w-1/2 justify-center items-start px-6">
-            <animated.p className="text-blue-800 font-serif my-4" style={props}>
-              <span className="spectral text-6xl">Treat your bad self</span>
+            <animated.p className="text-blue-800 josefin my-4" style={props}>
+              <span className="josefin text-6xl">Treat your bad self</span>
             </animated.p>
           </div>
         </div>

@@ -57,7 +57,7 @@ const ProductList = () => {
           <nav id="store" className="w-full z-30 top-0 px-6 py-1 col-span-12">
             <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2">
               <p
-                className="uppercase tracking-wide no-underline hover:no-underline font-serif font-medium text-blue-600 text-6xl "
+                className="uppercase tracking-wide no-underline hover:no-underline josefin font-medium text-blue-600 text-6xl "
                 id="store"
               >
                 Store
@@ -88,10 +88,10 @@ const ProductList = () => {
                         alt={handle}
                       />
                     )}
-                    <div className="pt-3 flex items-center justify-between">
+                    <div className="pt-3 flex items-center justify-between mx-2">
                       <p className="text-blue-700 text-lg ">{title}</p>
                     </div>
-                    <p className="pt-1 text-gray-700 text-lg font-bold">
+                    <p className="py-1 text-gray-700 text-lg font-bold mx-2">
                       {getPrice(firstVariant.price)}
                     </p>
                   </AniLink>

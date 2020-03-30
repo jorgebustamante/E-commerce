@@ -13,8 +13,10 @@ const ProductPage = ({ data }) => {
     <>
       <SEO title={product.title} description={product.description} />
       <animated.section className='' style={props}>
-        <Link to='/' className=''>Back to catalog</Link>
+      <Link to='/' className='underline text-blue-500 mx-2 md:mx-16'>❮ Back to catalog</Link>
+
         <div className='pb-8 mx-2 md:mx-16 grid grid-cols-12 gap-4'>
+          
           <div className='col-span-12 md:col-span-8 flex flex-no-wrap md:flex-row overflow-x-scroll md:overflow-hidden py-4' id='left'>
             {product.images.map(image => (
               <Img
@@ -27,7 +29,7 @@ const ProductPage = ({ data }) => {
           </div>
           <div className='col-span-12 md:col-span-4 mx-auto py-4 flex flex-col' id='right'>
             <div className='flex-1'>
-            <p className='text-blue-700 text-lg font-serif font-bold pb-2'>{product.title}</p>
+            <p className='text-blue-700 text-lg josefin font-bold pb-2'>{product.title}</p>
             <div
               dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
               className='text-gray-800'

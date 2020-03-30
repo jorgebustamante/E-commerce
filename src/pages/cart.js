@@ -9,7 +9,7 @@ const CartPage = () => {
   return (
     <animated.div style={props}>
       <Container className="">
-        <h1 className="font-serif font-bold text-6xl text-blue-700">Cart</h1>
+        <h1 className="josefin font-bold text-6xl text-blue-700">Cart</h1>
         <Cart />
       </Container>
     </animated.div>

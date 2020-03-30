@@ -77,7 +77,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`spectral`],
+        fonts: [`josefin sans`, `lato`],
         display: 'swap',
       },
     },

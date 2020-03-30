@@ -8,6 +8,12 @@
   font-weight: 800;
 
 }
+.josefin{
+  font-family: 'josefin sans';
+}
+.lato{
+  font-family: 'lato';
+}
 
 .fadein{
   opacity: 0;
